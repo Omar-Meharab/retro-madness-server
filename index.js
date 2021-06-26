@@ -32,7 +32,7 @@ client.connect(err => {
       })
   })
 
-  app.get('/blogs/:id', (req, res) => {
+  app.get('/:id', (req, res) => {
     blogsCollection.find({ _id: ObjectId(req.params.id) })
       .toArray((err, documents) => {
         res.send(documents[0]);
