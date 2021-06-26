@@ -55,13 +55,6 @@ client.connect(err => {
       })
   })
 
-  app.delete('/deleteBlog/:id', (req, res) => {
-    blogsCollection.deleteOne({ _id: ObjectId(req.params.id) })
-      .then(result => {
-        res.send(result.deletedCount > 0);
-      })
-  })
-
 });
 
 
